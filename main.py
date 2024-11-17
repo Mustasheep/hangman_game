@@ -16,7 +16,7 @@ for position in range(word_length):
 
 if "manga" in chosen_game:
     game = "uma fruta"
-elif "Preto" in chosen_game:
+elif "preto" in chosen_game:
     game = "uma cor"
 else:
     game = "um animal"
@@ -47,8 +47,10 @@ while not game_over:
 
         if lives == 0:
             game_over = True
+            print(stages[0])
             print(f"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Você Perdeu! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
                   f"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ A palavra correta era: {str(chosen_word).upper()} ~~~~~~~~~~~~~~~~~~~~~~~~~")
+            break
 
     print("\n")
     print(display)
@@ -56,6 +58,7 @@ while not game_over:
     if "_" not in display:
         game_over = True
         print("\n*********************************** Você Venceu! ************************************")
+        break
 
     print(stages[lives])
     print(f"Letras incorretas: {incorrect_letters}\n")
